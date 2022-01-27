@@ -78,7 +78,7 @@ function ResumeImg() {
             </div>
         </div>
         {/* its free */}
-        <div className="bg-white absolute right-10 p-3 px-4 rounded-sm border-2 -top-5">
+        <div className="bg-white absolute right-0 md:right-10 p-3 px-4 rounded-sm border-2 -top-5">
             <div className="font-bold">It's Free</div>
             <div className="flex items-center gap-1 text-cyan-500">
                 <AiFillStar className="text-xs" />
@@ -87,7 +87,7 @@ function ResumeImg() {
                 <AiFillStar className="text-xs" />
                 <AiFillStar className="text-xs" />
             </div>
-            <div className="text-xs pt-2 w-56">Developed by a student who felt worse when an online resume needs to be paid to downloaded after details are filled.</div>
+            <div className="text-xs pt-2 w-40 lg:w-56">Developed by a student who felt worse when an online resume needs to be paid to downloaded after details are filled.</div>
         </div>
     </div>
   );
