@@ -78,7 +78,7 @@ function ResumeImg() {
             </div>
         </div>
         {/* its free */}
-        <div className="bg-white absolute right-0 md:right-10 p-3 px-4 rounded-sm border-2 -top-5">
+        <div className="bg-white absolute -right-2 md:right-10 p-2 md:p-3 md:px-4 rounded-sm border-2 -top-5">
             <div className="font-bold">It's Free</div>
             <div className="flex items-center gap-1 text-cyan-500">
                 <AiFillStar className="text-xs" />
