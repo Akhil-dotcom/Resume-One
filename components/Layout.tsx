@@ -6,7 +6,7 @@ interface LayoutProps{
 }
 
 function Layout({ children }: LayoutProps) {
-  return <div className="bg-gray-900">
+  return <div className="bg-gray-900 min-h-screen">
       <Header />
       <div>{children}</div>
   </div>;

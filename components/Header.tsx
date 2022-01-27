@@ -4,12 +4,12 @@ import { BiMenu } from 'react-icons/bi'
 function Header() {
   return <div className="font-raedex">
       <div className="max-w-screen-xl mx-auto p-5 flex items-center justify-between">
-          <div className="text-2xl font-bold text-white">Resume One</div>
+          <Link href="/"><div className="text-2xl cursor-pointer font-bold text-white"><span className="text-cyan-500">One</span>Resume </div></Link>
           <div className="hidden md:flex items-center gap-10 text-sm">
               <div className="text-white">Dashboard</div>
               <Link href="editor"><div className="bg-white rounded-md font-medium p-2 px-4">Create Resume</div></Link>
           </div>
-          <BiMenu className="text-2xl md:hidden" />
+          <BiMenu className="text-2xl md:hidden text-white" />
       </div>
   </div>;
 }

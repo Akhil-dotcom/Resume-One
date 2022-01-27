@@ -87,7 +87,7 @@ function ResumeImg() {
                 <AiFillStar className="text-xs" />
                 <AiFillStar className="text-xs" />
             </div>
-            <div className="text-xs pt-2 w-56">Developed by a student who felt worse when an online resume needs to be paid to download after details are filled.</div>
+            <div className="text-xs pt-2 w-56">Developed by a student who felt worse when an online resume needs to be paid to downloaded after details are filled.</div>
         </div>
     </div>
   );
