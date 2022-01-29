@@ -5,6 +5,7 @@ import { modules } from '../quillmodules'
 
 // react icons
 import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai'
+import FormOpenBtn from '../FormOpenBtn';
 
 const ReactQuill = dynamic(
     () => import('react-quill'),
@@ -23,7 +24,13 @@ interface EducationDetails{
 type myArray = Array<EducationDetails>
 
 function EducationInfo() {
-
+// form open state
+const [formOpen, setformOpen] = useState<boolean>(true);
+//   form state
+const handleformOpen = () => {
+    setformOpen(true)
+}
+//  education details input
   const [description, setdescription] = useState("");  
   const [school, setschool] = useState("");
   const [degree, setsdegree] = useState("");
@@ -44,16 +51,21 @@ function EducationInfo() {
       
       seteducationList([...educationList, educationDetails]);
       console.log(educationList);
+
+      setformOpen(false)
       
   }
+
+
+  console.log(formOpen)
 
   return (
     <div className="bg-gray-800 p-5 rounded-md mx-auto font-raedex my-5">
         <div className="text-xl text-white font-bold pb-3">Education Info</div>
         {/* form */}
-        <div className="flex flex-col gap-5">
+        <div className={"flex flex-col" + formOpen && "gap-5"}>
             {/* education information */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 pb-5">
                 {educationList.length !== 0 && educationList.map((item, index) => (
                     <div key={index} className="border-2 border-gray-400 rounded-md p-5 flex items-center justify-between">
                         <div>
@@ -67,10 +79,12 @@ function EducationInfo() {
                     </div>
                 ))}
             </div>
+            {/* form open button */}
+            {formOpen !== true && <div onClick={handleformOpen}><FormOpenBtn /></div>}
             {/* education form */}
-            <form onSubmit={handleSubmit} className="grid gap-5">
+            {formOpen && <form onSubmit={handleSubmit} className="grid gap-5">
                 <div className="text-white">
-                    <div className="text-lg font-bold">Undefined</div>
+                    <div className="text-lg font-bold">{school !== "" ? school : "Undefined"}</div>
                     <div className="text-xs">Jan 2021 - Jun 2022</div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -108,7 +122,7 @@ function EducationInfo() {
                 <div className="flex justify-end">
                     <button type="submit" className="bg-white p-1 px-4 rounded-md w-max font-semibold text-sm">Add</button>
                 </div>
-            </form>
+            </form>}
         </div>
     </div>
   );
