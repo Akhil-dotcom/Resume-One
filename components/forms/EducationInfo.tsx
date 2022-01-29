@@ -98,7 +98,7 @@ const handleformOpen = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div className="grid grid-cols-2 gap-5">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-5">
                         <div className="flex flex-col">
                             <label className="text-xs text-slate-400 pb-2">Start Date</label>
                             <input type="month" name="startDate" className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
@@ -120,7 +120,7 @@ const handleformOpen = () => {
                     </div>
                 </div>
                 <div className="flex justify-end">
-                    <button type="submit" className="bg-white p-1 px-4 rounded-md w-max font-semibold text-sm">Add</button>
+                    <button type="submit" className="bg-cyan-500 text-white p-2 px-4 md:w-[150px] rounded-md w-full sm:w-max font-semibold text-sm">Add</button>
                 </div>
             </form>}
         </div>
