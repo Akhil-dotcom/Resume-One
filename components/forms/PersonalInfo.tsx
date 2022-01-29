@@ -4,8 +4,9 @@ import { AiFillPlusCircle } from 'react-icons/ai';
 function PersonalInfo() {
 const [addInfo, setaddInfo] = useState<boolean>(false);
   return (
-    <div className="max-w-screen-sm bg-gray-800 p-5 rounded-md mx-auto">
+    <div className="bg-gray-800 p-5 rounded-md mx-auto font-raedex">
         {/* personal Info */}
+        <div className="text-xl text-white font-bold pb-3">Personal Info</div>
         <div className="">
             <form className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="flex flex-col">

@@ -1,14 +1,16 @@
 import React from 'react';
 import Header from './Header';
+import {  useRouter } from 'next/router'
 
 interface LayoutProps{
     children: React.ReactNode
 }
 
 function Layout({ children }: LayoutProps) {
-  return <div className="bg-gray-900 min-h-screen">
-      <Header />
-      <div>{children}</div>
+  const router = useRouter()
+  return <div className="bg-gray-900 min-h-screen flex flex-col">
+      {router.pathname === "/editor" ? "" : <Header />}
+      <div className="flex-grow h-full">{children}</div>
   </div>;
 }
 
