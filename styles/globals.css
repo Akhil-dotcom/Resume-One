@@ -14,8 +14,66 @@
 
 
 /* quill */
-@layer base{
-  .ql-toolbar.ql-snow{
-    @apply border-2 rounder-md
-  }
+
+
+.ql-toolbar{
+  border: 20px solid #9ca3af;
 }
+
+.ql-toolbar.ql-snow{
+  border: 10px solid #9ca3af;
+  border-radius: 4px 4px 0 0;
+  background-color: #374151;
+}
+
+button{
+  background-color: red;
+}
+
+
+.ql-container.ql-snow{
+  height: 100px;
+  background-color: #374151;
+  color: #9ca3af;
+  font-family: 'Readex Pro', sans-serif;
+  border-radius: 0 0 4px 4px;
+  border-width: 5px;
+}
+
+
+/* toolbar button color */
+.ql-snow.ql-toolbar button:not(.ql-active),
+  .ql-snow .ql-toolbar button:not(.ql-active) {
+    color: #9ca3af;
+  }
+  .ql-snow.ql-toolbar button:not(.ql-active) .ql-fill,
+  .ql-snow .ql-toolbar button:not(.ql-active) .ql-fill,
+  .ql-snow.ql-toolbar button:not(.ql-active) .ql-stroke.ql-fill,
+  .ql-snow .ql-toolbar button:not(.ql-active) .ql-stroke.ql-fill {
+    fill: #9ca3af;
+  }
+  .ql-snow.ql-toolbar button:not(.ql-active) .ql-stroke,
+  .ql-snow .ql-toolbar button:not(.ql-active) .ql-stroke,
+  .ql-snow.ql-toolbar button:not(.ql-active) .ql-stroke-miter,
+  .ql-snow .ql-toolbar button:not(.ql-active) .ql-stroke-miter {
+    stroke: #9ca3af;
+  }
+
+  /* toolbar button hover */
+
+  .ql-snow.ql-toolbar button:hover:not(.ql-active),
+  .ql-snow .ql-toolbar button:hover:not(.ql-active) {
+    color: #06b6d4;
+  }
+  .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-fill,
+  .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-fill,
+  .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke.ql-fill,
+  .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-stroke.ql-fill {
+    fill: #06b6d4;
+  }
+  .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke,
+  .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-stroke,
+  .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke-miter,
+  .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-stroke-miter {
+    stroke: #06b6d4;
+  }

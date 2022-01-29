@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import { modules } from '../quillmodules'
 
+// react icons
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai'
+
 const ReactQuill = dynamic(
     () => import('react-quill'),
     {
@@ -10,15 +13,62 @@ const ReactQuill = dynamic(
     }
 )
 
+interface EducationDetails{
+    school: string;
+    degree: string;
+    cgpa: string;
+    description?: string;
+}
+
+type myArray = Array<EducationDetails>
+
 function EducationInfo() {
+
   const [description, setdescription] = useState("");  
-  const toolbarOptions = [['bold', 'italic'], ['link', 'image']];
+  const [school, setschool] = useState("");
+  const [degree, setsdegree] = useState("");
+  const [cgpa, setcgpa] = useState("");
+//   const [startDate, setstartDate] = useState<string>("");
+
+//   education array
+  const [educationList, seteducationList] = useState<myArray>([]);
+
+  const handleSubmit = (e: React.SyntheticEvent)=> {
+      e.preventDefault();
+      const educationDetails:EducationDetails = {
+          school: school,
+          degree: degree,
+          cgpa: cgpa,
+          description: description
+      }
+      
+      seteducationList([...educationList, educationDetails]);
+      console.log(educationList);
+      
+  }
+
   return (
     <div className="bg-gray-800 p-5 rounded-md mx-auto font-raedex my-5">
         <div className="text-xl text-white font-bold pb-3">Education Info</div>
         {/* form */}
-        <div>
-            <form className="grid gap-5">
+        <div className="flex flex-col gap-5">
+            {/* education information */}
+            <div className="flex flex-col gap-3">
+                {educationList.length !== 0 && educationList.map((item, index) => (
+                    <div key={index} className="border-2 border-gray-400 rounded-md p-5 flex items-center justify-between">
+                        <div>
+                            <div className="text-sm text-white font-bold">{item.school}</div>
+                            <p className="text-xs text-white">Jan 2021 - May 2021</p>
+                        </div>
+                        <div className="flex items-center gap-5 text-2xl">
+                            <AiOutlineDelete className="text-white" />
+                            <AiOutlineEdit className="text-white bg-cyan-500 rounded-md p-1" />
+                        </div>
+                    </div>
+                ))}
+            </div>
+            {/* education form */}
+            <form onSubmit={handleSubmit} className="grid gap-5">
                 <div className="text-white">
                     <div className="text-lg font-bold">Undefined</div>
                     <div className="text-xs">Jan 2021 - Jun 2022</div>
@@ -26,34 +76,37 @@ function EducationInfo() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="flex flex-col">
                         <label className="text-xs text-slate-400 pb-2">School</label>
-                        <input className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
+                        <input value={school} onChange={(e) => setschool(e.target.value)} className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
                     </div>
                     <div className="flex flex-col">
                         <label className="text-xs text-slate-400 pb-2">Degree</label>
-                        <input className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
+                        <input value={degree} onChange={(e) => setsdegree(e.target.value)} className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
                     </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="grid grid-cols-2 gap-5">
                         <div className="flex flex-col">
                             <label className="text-xs text-slate-400 pb-2">Start Date</label>
-                            <input className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
+                            <input type="month" name="startDate" className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
                         </div>
                         <div className="flex flex-col">
                             <label className="text-xs text-slate-400 pb-2">End Date</label>
-                            <input className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
+                            <input type="month" name="endDate" className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
                         </div>
                     </div>
                     <div className="flex flex-col">
                         <label className="text-xs text-slate-400 pb-2">CGPA</label>
-                        <input className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
+                        <input value={cgpa} onChange={(e) => setcgpa(e.target.value)} className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-400 text-sm" />
                     </div>
                 </div>
                 <div>
                     <div className="flex flex-col">
                         <label className="text-xs text-slate-400 pb-2">Description</label>
-                        <ReactQuill modules={modules} theme="snow" value={description} onChange={setdescription} />
+                        <ReactQuill modules={modules}  value={description} onChange={setdescription} />
                     </div>
+                </div>
+                <div className="flex justify-end">
+                    <button type="submit" className="bg-white p-1 px-4 rounded-md w-max font-semibold text-sm">Add</button>
                 </div>
             </form>
         </div>
