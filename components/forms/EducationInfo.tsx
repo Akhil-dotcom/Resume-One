@@ -25,7 +25,7 @@ type myArray = Array<EducationDetails>
 
 function EducationInfo() {
 // form open state
-const [formOpen, setformOpen] = useState<boolean>(true);
+const [formOpen, setformOpen] = useState<boolean>(false);
 //   form state
 const handleformOpen = () => {
     setformOpen(true)
