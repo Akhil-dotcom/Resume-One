@@ -63,9 +63,9 @@ const handleformOpen = () => {
     <div className="bg-gray-800 p-5 rounded-md mx-auto font-raedex my-5">
         <div className="text-xl text-white font-bold pb-3">Education Info</div>
         {/* form */}
-        <div className={"flex flex-col" + formOpen && "gap-5"}>
+        <div className={"flex flex-col gap-3"}>
             {/* education information */}
-            <div className="flex flex-col gap-3 pb-5">
+            <div className={"flex flex-col gap-3"}>
                 {educationList.length !== 0 && educationList.map((item, index) => (
                     <div key={index} className="border-2 border-gray-400 rounded-md p-5 flex items-center justify-between">
                         <div>
@@ -80,7 +80,7 @@ const handleformOpen = () => {
                 ))}
             </div>
             {/* form open button */}
-            {formOpen !== true && <div onClick={handleformOpen}><FormOpenBtn /></div>}
+            {formOpen !== true && <div onClick={handleformOpen} className="pt-3"><FormOpenBtn /></div>}
             {/* education form */}
             {formOpen && <form onSubmit={handleSubmit} className="grid gap-5">
                 <div className="text-white">

@@ -4,12 +4,12 @@ import PersonalInfo from '../components/forms/PersonalInfo';
 
 function Editor() {
   return (
-    <div className="font-raedex max-h-screen h-screen overflow-hidden relative">
+    <div className="font-raedex md:max-h-screen md:h-screen md:overflow-hidden relative">
         <div className="max-w-screen-xl mx-auto p-5 flex gap-5 h-full">
             <div className="flex-1">
               {/* <div className="text-white">Resume builder</div> */}
               {/* form and preview */}
-              <div className="max-w-2xl mx-auto xl:max-w-none h-full overflow-y-scroll md:scrollbar md:scrollbar-thin scrollbar-thumb-cyan-700">
+              <div className="max-w-2xl mx-auto xl:max-w-none h-full md:overflow-y-scroll scrollbar-hide">
                   <div className="font-raedex">
                     <div className="text-2xl text-white">Resume Details</div>
                     <div className="text-xs sm:text-sm pb-5 text-white">Enter your details and lets get on building your resume.</div>

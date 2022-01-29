@@ -11,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="">
         {/* home */}
         <div className="max-w-screen-xl mx-auto">
           {/* main */}
