@@ -21,9 +21,9 @@ export default function Home() {
               <p className="pt-4 md:text-lg text-gray-300 max-w-lg lg:mx-0">"Your resume says a lot about you, it determines wheather you will be called in for an interview or not." Your one stop resume spot. Build awesome resumes for free and land your dream job.</p>
               <div className="pt-8 flex flex-col sm:flex-row gap-5">
                 <Link href="editor">
-                  <button className="text-sm rounded-md font-medium p-3 px-6 bg-white">Create Resume</button>
+                  <button className="text-sm hover:scale-105 active:scale-95 duration-200 rounded-md font-medium p-3 px-6 bg-white">Create Resume</button>
                 </Link>
-                <button className="text-sm rounded-md text-gray-300 bg-gray-800 font-medium p-3 px-6">Share</button>
+                <button className="text-sm hover:scale-105 active:scale-95 duration-200 rounded-md text-gray-300 bg-gray-800 font-medium p-3 px-6">Share</button>
               </div>
             </div>
             <div className="flex-1">

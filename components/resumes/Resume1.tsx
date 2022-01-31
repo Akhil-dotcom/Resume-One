@@ -88,6 +88,24 @@ function Resume1() {
                             <li>Worked as a full stack developer to develop their website and dashboard using React Is, Node Js and mongo DB (MERN Stack).</li>
                         </ul>
                     </div>
+                    <div className="">
+                        <p className="font-semibold">Full Stack Developer | Bluechip encore private limited, Banglore</p>
+                        <p className="text-sm pb-2">May 2021 - Jan 2021</p>
+                        <ul className="text-sm flex flex-col gap-2">
+                            <li>Worked as a full stack developer to develop their website and dashboard using React Is, Node Js and mongo DB (MERN Stack).</li>
+                            <li>Worked as a full stack developer to develop their website and dashboard using React Is, Node Js and mongo DB (MERN Stack).</li>
+                            <li>Worked as a full stack developer to develop their website and dashboard using React Is, Node Js and mongo DB (MERN Stack).</li>
+                        </ul>
+                    </div>
+                    <div className="">
+                        <p className="font-semibold">Full Stack Developer | Bluechip encore private limited, Banglore</p>
+                        <p className="text-sm pb-2">May 2021 - Jan 2021</p>
+                        <ul className="text-sm flex flex-col gap-2">
+                            <li>Worked as a full stack developer to develop their website and dashboard using React Is, Node Js and mongo DB (MERN Stack).</li>
+                            <li>Worked as a full stack developer to develop their website and dashboard using React Is, Node Js and mongo DB (MERN Stack).</li>
+                            <li>Worked as a full stack developer to develop their website and dashboard using React Is, Node Js and mongo DB (MERN Stack).</li>
+                        </ul>
+                    </div>
                   </div>
               </div>
           </div>

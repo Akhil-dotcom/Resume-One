@@ -9,7 +9,7 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
   const router = useRouter()
   return (
-    <div className="flex flex-col bg-gray-900">
+    <div className="flex flex-col bg-gray-900 min-h-screen">
       {router.pathname === '/editor' ? '' : <Header />}
       <div className="h-full flex-grow">{children}</div>
     </div>
