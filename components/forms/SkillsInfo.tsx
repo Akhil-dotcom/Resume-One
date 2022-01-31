@@ -13,13 +13,10 @@ function SkillsInfo() {
    // slider
    const sliderValue = [
     {
-      name: "Novice"
+      name: "Entry"
     },
     {
-      name: "Beginner"
-    },
-    {
-      name: "Skillfull"
+      name: "Intermediate"
     },
     {
       name: "Experienced"
@@ -67,9 +64,9 @@ function SkillsInfo() {
           <div className="flex flex-col">
             <input value={skill} onChange={(e) => setskill(e.target.value)} className="border-2 rounded-md p-2 bg-gray-700 border-gray-400 outline-none focus:border-cyan-500 text-gray-300 text-sm" />
           </div>
-          <div className="bg-slate-700 rounded-md text-xs flex-grow flex">
+          <div className="bg-slate-700 rounded-md text-xs flex-grow flex flex-wrap">
             {sliderValue.map((item, index) => (
-              <div key={index} onClick={() => setlevel(item.name)} className="flex-1 flex items-center p-2 justify-center">
+              <div key={index} onClick={() => setlevel(item.name)} className="sm:flex-1 flex items-center p-2 justify-center">
                 <div className={`p-1 rounded-md flex items-center justify-center cursor-pointer px-2 ${level === item.name ? "bg-white text-gray-900 font-semibold" : "text-gray-400 hover:bg-slate-600"}`}>{item.name}</div>
               </div>
             ))}
